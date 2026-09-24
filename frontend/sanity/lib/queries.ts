@@ -1,9 +1,11 @@
 import {defineQuery} from 'next-sanity'
 
-export const settingsQuery = defineQuery(`*[_type == "settings"][0]`)
+// 1. Adicionado _id e _type aqui
+export const settingsQuery = defineQuery(`*[_type == "settings"][0]{_id, _type, title, description, logo, ogImage}`)
 
 const postFields = /* groq */ `
   _id,
+  _type, // <-- 2. ADICIONE ESTA LINHA (Fundamental para o Visual Editing)
   "status": select(_originalId in path("drafts.**") => "draft", "published"),
   "title": coalesce(title, "Untitled"),
   "slug": slug.current,
