@@ -23,6 +23,25 @@ export const settings = defineType({
       initialValue: demo.title,
       validation: (rule) => rule.required(),
     }),
+
+    defineField({
+      name: 'logo',
+      title: 'Logo do Site',
+      type: 'image',
+      description: 'Upload da logo exibida no cabeçalho.',
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Texto Alternativo',
+          type: 'string',
+          initialValue: 'Logo',
+        }),
+      ],
+    }),
+
     defineField({
       name: 'description',
       description: 'Used on the Homepage',
