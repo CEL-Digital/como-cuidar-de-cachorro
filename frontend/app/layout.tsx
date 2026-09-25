@@ -75,7 +75,7 @@ export default async function RootLayout({children}: LayoutProps<'/'>) {
   return (
     <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable} bg-white text-black`}>
       <body>
-        <section className="min-h-screen pt-24">
+        <section className="min-h-screen pt-24 flex flex-col">
           <Toaster />
           {isDraftMode && (
             <>
