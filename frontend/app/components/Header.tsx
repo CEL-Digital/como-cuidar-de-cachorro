@@ -44,7 +44,7 @@ export default function Header({ settings }: { settings?: any }) {
   const mobileMenu = [...leftMenu, ...rightMenu]
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 h-24 border-b border-gray-100 bg-white/80 backdrop-blur-lg">
+    <header className="absolute inset-x-0 top-0 h-24">
       <div className="container mx-auto h-full px-4 sm:px-6">
         <Disclosure as="nav" className="h-full flex items-center justify-between">
           {({ open }) => (
